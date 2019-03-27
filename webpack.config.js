@@ -30,7 +30,14 @@ module.exports =(env, { mode }) => {
                         devMode ? 'style-loader' : MiniCssExtractPlugin.loader, //to create a css file for production, otherwise css'll be inside js file
                         'css-loader', 
                         'postcss-loader', 
-                        'sass-loader'
+                        'resolve-url-loader',
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                sourceMap: true,
+                                sourceMapContents: false
+                            }
+                        }
                     ]
                 },
                 {
