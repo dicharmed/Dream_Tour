@@ -1,2 +1,1 @@
-import './css/styles.scss';
-import './css/components/buttons.scss';
+import './css/main.scss';

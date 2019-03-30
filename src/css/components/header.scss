@@ -1,0 +1,75 @@
+/*--------------------------LOG IN / LOG OUT---------------------------------*/
+.header__top {
+    display: block;    
+    padding-right: 10px;
+    text-align: right;  
+    line-height: 2.7;
+    font-size: 11px;
+    background-color: $light-gray; 
+
+    .link-color-blue:not(:hover) {
+        color: #7b8a97;    
+    }
+
+    .link-color-blue:first-child {
+        margin-right: 20px;
+    }
+
+    .link-color-blue:nth-child(2) {
+        margin-right: 10px;
+    }
+    
+}
+
+/*--------------------------LOGO & NAVIGATION---------------------------------*/
+.logo-mobile {
+    display: none;
+}
+
+.navigation__link {   
+    color: #606061;  
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 12px;   
+    text-align: center; 
+    
+    &:last-child {  //& -parent
+        margin-right: 0;
+    }
+}
+
+.header-main {
+    display: block;       
+    padding: 6px 0;
+    background-color: white;
+    box-shadow:0 2px 4px -2px rgba(0, 0, 0, 0.15);
+}
+.header-main__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    height: 70px;    
+}
+.header-main__row {
+    flex: 0 1 100%;
+    
+}
+.header-main__navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+
+    @media screen and (max-width: 800px){
+        display: none;
+    }
+   
+}
+.logo {
+    display: flex;    
+    align-items: center;  
+
+}
+.logo img {
+    height: 50px;    
+}

@@ -79,7 +79,7 @@ module.exports =(env, { mode }) => {
                 chunkFilename: devMode ? '[id].css' : '[id].[hash].css'
             }),
             new HtmlWebpackPlugin({
-                template: path.resolve('./src/pages/index.pug'),
+                template: path.resolve('./src/html/pages/index.pug'),
                 filename: 'index.html'               
             }),
             new CleanWebpackPlugin()

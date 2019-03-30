@@ -1,10 +1,12 @@
-@import './vendors';
+@font-face { 
+    font-family: cometa;
+    src: url(../fonts/cometa.ttf);  
+}
 body {
-    background: blueviolet;
+    font-family: $main-font;    
+    background: white;   
 }
-.block-div {
-    box-sizing: border-box;
-}
-::placeholder {
-    color: gray;
+.container {
+    padding-right: 5%;
+    padding-left: 5%;    
 }
