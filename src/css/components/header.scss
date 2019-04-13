@@ -95,6 +95,10 @@
     column-count: 3;
 }
 
+.submenu-service {
+    width: 30%; 
+}
+
 .element {
     padding: 8px 0;
     font-size: 9px;
@@ -118,6 +122,10 @@
 
     .submenu-tours {
         left: 312px;
+    }
+
+    .submenu-service{        
+        left: 450px;
     }
  
 }
