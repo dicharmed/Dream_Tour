@@ -7,6 +7,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin'); //to clean the dist 
 module.exports =(env, { mode }) => {
     const devMode = mode !== 'production'; //otherwise its always mode development by default
     return {
+        devtool:'source-map',
         entry: {
             app: path.resolve('./src/main.js')
         },
@@ -28,7 +29,18 @@ module.exports =(env, { mode }) => {
                     test: /\.(c|sc|sa)ss$/, 
                     use:[
                         devMode ? 'style-loader' : MiniCssExtractPlugin.loader, //to create a css file for production, otherwise css'll be inside js file
-                        'css-loader', 
+                        {
+                            loader: 'style-loader',
+                            options: {
+                                sourceMap: true
+                            }                            
+                        },
+                        {
+                            loader:'css-loader', 
+                            options: {
+                                sourceMap: true
+                            }
+                        },
                         'postcss-loader', 
                         'resolve-url-loader',
                         {
@@ -53,6 +65,7 @@ module.exports =(env, { mode }) => {
                 },
                 {
                     test: /\.(png|svg|jpg|gif)$/,
+                    
                     use: {
                         loader: 'url-loader',
                         options: {

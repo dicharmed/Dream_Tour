@@ -2,11 +2,32 @@
     font-family: cometa;
     src: url(../fonts/cometa.ttf);  
 }
+@font-face {
+    font-family: OpenSans;
+    src: url(../fonts/OpenSans-Regular.ttf);          
+   }
+
 body {
     font-family: $main-font;    
-    background: white;   
+    background: white; 
+    
 }
+
+.active {
+    color: $blue !important;
+}
+
 .container {
     padding-right: 5%;
     padding-left: 5%;    
 }
+
+%link {
+    transition: 0.4s;
+    text-decoration: none;
+}
+
+.link--color-blue:hover {
+    color: $blue;        
+}
+

@@ -1,75 +1,128 @@
 /*--------------------------LOG IN / LOG OUT---------------------------------*/
-.header__top {
+.header-top {
     display: block;    
     padding-right: 10px;
     text-align: right;  
     line-height: 2.7;
-    font-size: 11px;
-    background-color: $light-gray; 
+    font-size: 12px;    
 
-    .link-color-blue:not(:hover) {
-        color: #7b8a97;    
+    .header-top__link {
+        @extend %link;
+        color: #7b8a97;  
     }
 
-    .link-color-blue:first-child {
+    .header-top__link:first-child {
         margin-right: 20px;
     }
 
-    .link-color-blue:nth-child(2) {
+    .header-top__link:nth-child(2) {
         margin-right: 10px;
     }
     
 }
 
 /*--------------------------LOGO & NAVIGATION---------------------------------*/
-.logo-mobile {
-    display: none;
-}
-
-.navigation__link {   
-    color: #606061;  
-    font-weight: bolder;
-    text-transform: uppercase;
-    font-size: 12px;   
-    text-align: center; 
-    
-    &:last-child {  //& -parent
-        margin-right: 0;
-    }
-}
-
 .header-main {
     display: block;       
     padding: 6px 0;
     background-color: white;
     box-shadow:0 2px 4px -2px rgba(0, 0, 0, 0.15);
+
+    .logo__link {
+        @extend %link;
+    }
 }
 .header-main__container {
-    display: flex;
+    display: grid;
+    grid-gap: 10%;     
+    grid-template-columns: 20% 70%;
     align-items: center;
-    justify-content: center;
-    
     height: 70px;    
 }
-.header-main__row {
-    flex: 0 1 100%;
-    
-}
-.header-main__navigation {
+
+.navigation {
+
     display: flex;
-    align-items: center;
-    justify-content: space-between; 
+    justify-content: flex-end;
+
+    .menu {       
+        display: flex;
+        position: relative;
+        width: 553px;
+        justify-content: space-between; 
+        padding: 0;    
+        list-style: none;  
+
+        .menu-li:hover {
+
+            .menu__link {
+                color: $blue;
+            }
+        
+            .submenu{    
+                left: 140px;
+                opacity: 1;
+                animation: 0.4s ease-in slideInUpp; //myanimate.scss
+            }
+        }
+    }    
+
+    .menu__link {   
+
+        @extend %link;
+
+        color: #606061;  
+        font-weight: bolder;
+        text-transform: uppercase;
+        font-size: 12px;   
+        text-align: center; 
+        text-decoration: none;  
+    }
+
+    .submenu {       
+        position: absolute;    
+        width: 70%;   
+        left: -9999px;
+        opacity: 0;
+        padding: 20px 20px 10px 38px;
+    
+        column-count: 3;
+        list-style: none;    
+        background: white;   
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px; 
+        transition: 0.25s linear opacity;   
+    
+        .element {
+            padding: 8px 0;
+            font-size: 9px;
+            text-transform: uppercase;
+            
+
+            .submenu__link {
+                @extend %link;                
+                color: #606061; 
+
+                
+            }
+        }
+    
+    }
 
     @media screen and (max-width: 800px){
         display: none;
     }
-   
 }
 .logo {
-    display: flex;    
-    align-items: center;  
 
+    .logo-pc{
+        height: 55px;  
+    }
+
+    .logo-mobile {
+        display: none;
+    }
+      
 }
-.logo img {
-    height: 50px;    
-}
+
+

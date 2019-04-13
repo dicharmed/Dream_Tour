@@ -1,16 +1,10 @@
 @import 'variables';
 
-a.link-color-blue {
-    transition: 0.4s;
+.home-body {
+    background-color: $light-gray; 
+    margin: 0;
+}
 
-    &:hover {
-        color: $blue;
-    text-decoration: none;
-    }
-}
-.active {
-    color: $blue;
-}
 .caption {
     padding-bottom: 10px;
     font-family: $captions-font;
