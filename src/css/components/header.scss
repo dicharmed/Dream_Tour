@@ -6,16 +6,16 @@
     line-height: 2.7;
     font-size: 12px;    
 
-    .header-top__link {
+    &__link {
         @extend %link;
         color: #7b8a97;  
     }
 
-    .header-top__link:first-child {
+    &__link:first-child {
         margin-right: 20px;
     }
 
-    .header-top__link:nth-child(2) {
+    &__link:nth-child(2) {
         margin-right: 10px;
     }
     
@@ -27,11 +27,12 @@
     padding: 6px 0;
     background-color: white;
     box-shadow:0 2px 4px -2px rgba(0, 0, 0, 0.15);
-
-    .logo__link {
-        @extend %link;
-    }
 }
+
+.logo__link {
+    @extend %link;
+}
+
 .header-main__container {
     display: grid;
     grid-gap: 10%;     
@@ -44,30 +45,17 @@
 
     display: flex;
     justify-content: flex-end;
+}
 
-    .menu {       
-        display: flex;
-        position: relative;
-        width: 553px;
-        justify-content: space-between; 
-        padding: 0;    
-        list-style: none;  
+.menu {       
+    display: flex;
+    position: relative;
+    width: 553px;
+    justify-content: space-between; 
+    padding: 0;    
+    list-style: none;  
 
-        .menu-li:hover {
-
-            .menu__link {
-                color: $blue;
-            }
-        
-            .submenu{    
-                left: 140px;
-                opacity: 1;
-                animation: 0.4s ease-in slideInUpp; //myanimate.scss
-            }
-        }
-    }    
-
-    .menu__link {   
+    &__link {
 
         @extend %link;
 
@@ -77,52 +65,69 @@
         font-size: 12px;   
         text-align: center; 
         text-decoration: none;  
-    }
-
-    .submenu {       
-        position: absolute;    
-        width: 70%;   
-        left: -9999px;
-        opacity: 0;
-        padding: 20px 20px 10px 38px;
-    
-        column-count: 3;
-        list-style: none;    
-        background: white;   
-        border-bottom-left-radius: 2px;
-        border-bottom-right-radius: 2px; 
-        transition: 0.25s linear opacity;   
-    
-        .element {
-            padding: 8px 0;
-            font-size: 9px;
-            text-transform: uppercase;
-            
-
-            .submenu__link {
-                @extend %link;                
-                color: #606061; 
-
-                
-            }
-        }
-    
-    }
+    }  
 
     @media screen and (max-width: 800px){
         display: none;
     }
+}   
+
+.submenu {       
+    position: absolute;      
+    left: -9999px;
+    opacity: 0;
+    padding: 20px 20px 10px 38px;    
+    list-style: none;    
+    background: white;   
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px; 
+    transition: 0.25s linear opacity;
+    
+    &__link {
+        @extend %link;                
+        color: #606061;         
+    }
+
 }
-.logo {
 
-    .logo-pc{
-        height: 55px;  
+.submenu-countries {
+    width: 70%; 
+    column-count: 3;
+}
+
+.element {
+    padding: 8px 0;
+    font-size: 9px;
+    text-transform: uppercase;            
+}
+
+.menu-li:hover {
+
+    .menu__link {
+        color: $blue;
     }
 
-    .logo-mobile {
-        display: none;
+    .submenu {        
+        opacity: 1;
+        animation: 0.4s ease-in slideInUpp; //myanimate.scss
     }
-      
+
+    .submenu-countries {
+        left: 140px;
+    }
+
+    .submenu-tours {
+        left: 312px;
+    }
+ 
+}
+
+.logo-pc{
+    height: 50px;  
+}
+
+.logo-mobile {
+    display: none;
 }
 
 

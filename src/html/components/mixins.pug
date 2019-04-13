@@ -1,0 +1,9 @@
+-var mainMenu= ['Главная', 'Страны', 'Туры', 'Услуги']
+-var countries= ['Австралия', 'Австрия', 'Азербайджан', 'Андорра', 'Аргентина', 'Армения', 'Багамы', 'Бахрейн', 'Беларусь', 'Бельгия', 'Болгария', 'Бразилия', 'Великобритания', 'Венгрия', 'Вьетнам', '','']
+-var tours= ['Пляжный', 'Экскурсионный', 'Горнолыжный', 'Однодневный', 'Выходной', 'Горящий']
+
+mixin subMenu(elements)
+    each element in elements
+        li.element
+            img(src= "#", alt="flag", class="element__icon")  
+            a(href="#" class=" link--color-blue submenu__link")= element

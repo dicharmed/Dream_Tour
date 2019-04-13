@@ -1,3 +1,4 @@
+include mixins
 //TOP LINE LOG-IN | LOG-OUT
 .header-top
     a(class='header-top__link link--color-blue' href='#') Регистрация | Вход
@@ -7,29 +8,23 @@
         i(class='fab fa-instagram fa-lg' aria-hidden='true') 
 
 //LOGO & NAVIGATION
-.header-main
+.header-main    
     div(class="container header-main__container")       
         div(class="logo")
             a(class="logo__link link--color-blue" href='#')
-                img(src=require('./logo.png'), alt="Dream Tour", class="logo-pc")
+                img(src=require('../../img/logo.png'), alt="Dream Tour", class="logo-pc")
                 //img(src="./src/img/logo-mobile.png", alt="Dream Tour", class="logo-mobile")        
         nav(class="navigation")
-            ul.menu
-                each val in ['Главная', 'Страны', 'Туры', 'Услуги']                        
+            ul.menu                           
+                each val in mainMenu                        
                     li.menu-li
                         if val=='Главная'
                             a(href="#" class="active menu__link link--color-blue ")= val 
                         else 
                             a(href="#" class="menu__link link--color-blue")= val 
                             if val== 'Страны'
-                                ul(class="submenu")
-                                    each country in ['Австралия', 'Австрия', 'Азербайджан', 'Андорра', 'Аргентина', 'Армения', 'Багамы', 'Бахрейн', 'Беларусь', 'Бельгия', 'Болгария', 'Бразилия', 'Великобритания', 'Венгрия', 'Вьетнам', '','','']
-                                        <!--each flag in ['flag1.png'] //get flags!!!-->
-                                            li.element                                                                                        
-                                                img(src= "#", alt="flag", class="element__icon")  
-                                                a(href="#" class=" link--color-blue submenu__link")= country 
-                                
-                                                                            
-                                                
-
-
+                                ul(class="submenu submenu-countries")                                   
+                                    +subMenu(countries)                                   
+                            else if val== 'Туры'
+                                ul(class="submenu submenu-tours")                                    
+                                    +subMenu(tours)
